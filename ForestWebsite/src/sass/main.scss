@@ -52,15 +52,15 @@ body {
 	position: relative;
 	width: 100%;
 	height: 400px;
-	background-image: url("/dist/img/stairs_b.jpg");
-	background-position: bottom;
-	background-size:cover;
+	background-image: url('/dist/img/stairs_b.jpg');
+	background-size: cover;
+	background-position-y: 150%;
 	background-attachment: fixed;
-	.shadow{
+	.shadow {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 26, 0.7);
+		background-color: rgba(0, 0, 26, 0.5);
 		z-index: 0;
 	}
 	.text {
@@ -70,13 +70,57 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		p{
+		p {
 			z-index: 10;
 			width: 70%;
 		}
-		h1{
+		h1 {
 			z-index: 10;
 			width: 70%;
+		}
+	}
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		margin: 56px 0;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+}
+
+.about-us {
+	height: 600px;
+
+	.about-us-contain {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		.image {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 50%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.text {
+			width: 50%;
+			margin-left: 40px;
+
+			p {
+				margin-top: 10px;
+				line-height: 28px;
+				font-size: 14px;
+			}
 		}
 	}
 }
