@@ -131,16 +131,29 @@ body {
 	// background-attachment:fixed;
 
 	h1 {
+		position: relative;
 		padding: 20px 60px;
 		color: aliceblue;
-		border: 4px solid aliceblue;
 		z-index: 1;
-		transition: padding 0.3s;
+		border: 2px solid aliceblue;
+		// transition: padding 0.3s;
 	}
 
-	h1:hover {
-		padding: 30px 80px;
+	h1::before {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		content: '';
+		left: -2px;
+		top: -2px;
+		border: 2px solid aliceblue;
+		z-index: 1;
+		animation: pulse 1.4s ease-in infinite ;
 	}
+
+	// h1:hover {
+	// 	padding: 30px 80px;
+	// }
 	.shadow {
 		position: absolute;
 		width: 100%;
@@ -164,9 +177,9 @@ body {
 			margin: 0 18px;
 			width: 220px;
 			height: 300px;
-			// border: 1px solid black;
 			border-radius: 12px;
 			box-shadow: 0px 0px 12px grey;
+			transition: transform 0.3s;
 
 			.title {
 				font-size: 20px;
@@ -212,5 +225,20 @@ body {
 				color: aliceblue;
 			}
 		}
+
+		.card:hover {
+			transform: rotate(2deg);
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0.6;
+	}
+
+	100% {
+		opacity: 0;
+		transform: scaleX(1.1) scaleY(1.6);
 	}
 }
