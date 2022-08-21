@@ -265,17 +265,35 @@ body {
 		transition: 0.3s;
 	}
 	.toOffers:hover {
-		transform: scale(1.05)
+		transform: scale(1.05);
 	}
 
 	.offers-cards {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
-		.card{
+
+		.card {
 			margin: 30px;
 		}
+	}
+}
+
+.contact-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	.contact-form {
+		height: 300px;
+		width: 50%;
+		background-color: #4d4d4d;
+	}
+	.contact-map {
+		height: 100px;
+		width: 50%;
+		background-color: aquamarine;
 	}
 }
 
