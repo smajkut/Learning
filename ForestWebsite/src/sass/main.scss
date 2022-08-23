@@ -177,40 +177,50 @@ body {
 	}
 }
 
+.pOffers {
+	text-align: center;
+}
+
 .section {
+	display: flex;
 	min-height: 700px;
+
 	.cards {
 		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		flex-wrap: wrap;
-		margin-top: 70px;
+		margin-top: 10px;
 
 		.card {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			margin: 30px;
-			width: 200px;
-			height: 300px;
+			margin: 10px;
+			width: 280px;
+			height: 210px;
 			border-radius: 12px;
 			box-shadow: 0px 0px 12px grey;
 			transition: transform 0.3s;
 
 			.title {
-				font-size: 20px;
+				margin-top: 10px;
+				font-size: 16px;
 			}
 
 			.price {
-				margin: 10px 0;
-				font-size: 26px;
+				margin: 4px 0;
+				font-size: 18px;
 				font-weight: 700;
 			}
 
 			.options {
 				text-align: left;
 				list-style: none;
-				font-size: 14px;
-				line-height: 22px;
+				font-size: 12px;
+				line-height: 20px;
 
 				.in i {
 					color: green;
@@ -221,8 +231,8 @@ body {
 				}
 			}
 			.btn {
-				margin-top: 22px;
-				padding: 8px 26px;
+				margin: 10px 0;
+				padding: 6px 20px;
 				font-size: 13px;
 				font-weight: 700;
 				color: rgb(108, 108, 108);
@@ -248,9 +258,12 @@ body {
 	.toOffers {
 		text-decoration: none;
 		color: #145c00dd;
-		font-size: 18px;
-		margin-top: 20px;
+		font-size: 16px;
+		margin: 14px 0;
 		transition: 0.3s;
+		border: 1px solid #145c00dd;
+		padding: 8px 12px;
+		border-radius: 4px;
 	}
 	.toOffers:hover {
 		transform: scale(1.05);
@@ -262,46 +275,46 @@ body {
 		align-items: center;
 
 		.card {
-			margin: 30px;
+			margin: 10px;
 		}
+	}
+
+	.offers-cards:last-child {
+		margin-bottom: 20px;
 	}
 }
 
 .contact-box {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 400px;
-	margin-top: 50px;
+	min-height: 400px;
+	margin-top: 30px;
 	.contact-form {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		width: 50%;
 		justify-content: center;
 		align-items: center;
-		font-size: 18px;
-		// background-color: #4d4d4d;
+		font-size: 16px;
+		margin-right: 6px;
 
 		p {
-			margin-bottom: 16px;
+			margin-bottom: 10px;
 		}
 		label {
-			margin-bottom: 6px;
+			margin-bottom: 4px;
 		}
 		.email {
-			margin-top: 12px;
+			margin-top: 10px;
 		}
-		// .message{
-		// 	transform: translateX(-50px);
-		// }
 
 		input {
 			margin-bottom: 10px;
-			padding: 8px 22px;
-			font-size: 14px;
+			padding: 6px 10px;
+			font-size: 12px;
 			border: 1px solid royalblue;
 			border-radius: 5px;
 		}
@@ -309,16 +322,15 @@ body {
 		textarea {
 			height: 140px;
 			max-height: 200px;
-			width: 400px;
-			max-width: 500px;
-			padding: 8px 22px;
-			font-size: 14px;
+			width: 280px;
+			// max-width: 500px;
+			padding: 4px 14px;
+			font-size: 12px;
 			border: 1px solid royalblue;
 			border-radius: 5px;
 		}
 		button {
 			display: flex;
-			transform: translateX(160px);
 			margin: 10px;
 			padding: 6px 12px;
 			border: none;
@@ -331,9 +343,11 @@ body {
 	.contact-map {
 		display: flex;
 		height: 100%;
-		width: 50%;
+		width: 40%;
 		justify-content: center;
 		align-items: center;
+		margin-left: 6px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -356,30 +370,28 @@ footer {
 	background-color: #e2e0e0;
 
 	.footer-menu {
-		// position: relative;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
-		height: 300px;
 		margin-top: 20px;
 
 		.footer-logo {
-			font-size: 60px;
+			font-size: 26px;
 			color: #4d4d4d;
 			width: 50%;
 			text-align: center;
+			margin-bottom: 18px;
 		}
 		.footer-options {
-			// position: absolute;
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
 			width: 50%;
 			.options-card {
-				margin: 0 35px;
+				margin: 0 18px;
 
 				.footer-list-title {
-					font-size: 18px;
+					font-size: 16px;
 					font-weight: bold;
 					margin-bottom: 10px;
 				}
@@ -406,7 +418,203 @@ footer {
 	}
 }
 
-@media (min-width: 1200px) {
+
+@media (min-width: 567px) {
+	html {
+		scroll-padding-top: 40px;
+	}
+
+	.wrapper {
+		width: 85%;
+	}
+
+	.navigation {
+		height: 80px;
+	}
+
+	.nav-logo {
+		font-size: 26px;
+		margin-left: 0;
+	}
+
+	.nav-menu {
+		display: flex;
+		width: 50%;
+		justify-content: space-around;
+		text-decoration: none;
+		margin-right: 0;
+		background-color: red;
+		.nav-btn {
+			display: flex;
+			height: 80px;
+			width: 100%;
+			text-decoration: none;
+			color: rgb(65, 65, 65);
+			font-size: 16px;
+			position: relative;
+			justify-content: center;
+			align-items: center;
+			transition: 0.3s;
+		}
+		.nav-btn:hover {
+			color: rgb(245, 245, 245);
+			background-color: rgb(12 20 30);
+		}
+	}
+
+	.header {
+		height: 500px;
+		background-image: url('/dist/img/stairs_b.jpg');
+		background-position-y: 100%;
+		background-attachment: fixed;
+
+		.text {
+			p {
+				font-size: 20px;
+			}
+			h1 {
+				font-size: 34px;
+			}
+		}
+	}
+
+	.section {
+		h1 {
+			font-size: 32px;
+			margin: 36px 0;
+		}
+	}
+
+	.about-us {
+		height: 600px;
+
+		.about-us-contain {
+			display: flex;
+			flex-direction: row;
+
+			.image {
+				width: 50%;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.text {
+				width: 50%;
+				margin-left: 20px;
+			}
+		}
+	}
+
+	.adventure-section {
+		background-image: url('/dist/img/child_b.jpg');
+		height: 300px;
+
+		h1 {
+			padding: 20px 60px;
+			font-size: 26px;
+		}
+		
+	}
+
+	.section {
+		.cards {
+			flex-direction: row;
+			margin-top: 40px;
+
+			.card {
+				margin: 10px;
+				width: 200px;
+				height: 300px;
+
+				.title {
+					font-size: 20px;
+				}
+				
+				.price {
+					margin: 10px 0;
+					font-size: 26px;
+				}
+
+				.options {
+					font-size: 14px;
+					line-height: 22px;
+				}
+
+				.btn {
+					margin-top: 22px;
+					padding: 8px 26px;
+					font-size: 13px;
+				}
+			}
+		}
+		.toOffers {
+			font-size: 14px;
+			margin-top: 10px;
+		}
+
+		.offers-cards {
+			.card {
+				margin: 10px;
+			}
+		}
+	}
+	
+	.contact-box {
+		margin-top: 50px;
+		.contact-form {
+			font-size: 18px;
+			p {
+				margin-bottom: 18px;
+			}
+			label {
+				margin-bottom: 6px;
+			}
+			.email {
+				margin-top: 12px;
+			}
+
+			input {
+				padding: 8px 22px;
+				font-size: 14px;
+			}
+
+			textarea {
+				width: 300px;
+				max-width: 500px;
+				padding: 8px 22px;
+				font-size: 14px;
+			}
+		}
+		.contact-map {
+			width: 50%;
+		}
+	}
+
+	footer {
+		.footer-menu {
+			flex-direction: row;
+			height: 200px;
+			margin-top: 20px;
+
+			.footer-logo {
+				transform: translateX(-20%);
+				font-size: 30px;
+			}
+			.footer-options {
+				.options-card {
+					margin: 0 14px;
+
+					.footer-list-title {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
 	html {
 		scroll-padding-top: 100px;
 	}
@@ -472,40 +680,20 @@ footer {
 	}
 
 	.about-us {
-		height: 600px;
 
 		.about-us-contain {
-			display: flex;
-			flex-direction: row;
-			// justify-content: center;
-
-			.image {
-				// display: flex;
-				// align-items: center;
-				// justify-content: center;
-				width: 50%;
-
-				img {
-					width: 100%;
-				}
-			}
-
 			.text {
-				width: 50%;
 				margin-left: 40px;
 			}
 		}
 	}
 
 	.adventure-section {
-		background-image: url('/dist/img/child_b.jpg');
-		height: 300px;
 
 		h1 {
-			padding: 20px 60px;
 			font-size: 32px;
 		}
-
+		
 		h1::before {
 			position: absolute;
 			width: 100%;
@@ -520,113 +708,55 @@ footer {
 	}
 
 	.section {
-		min-height: 700px;
 		.cards {
-			display: flex;
-			flex-wrap: wrap;
 			margin-top: 70px;
 
 			.card {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
 				margin: 30px;
-				width: 200px;
-				height: 300px;
-				border-radius: 12px;
-				box-shadow: 0px 0px 12px grey;
-				transition: transform 0.3s;
 
-				.title {
-					font-size: 20px;
-				}
-
-				.price {
-					margin: 10px 0;
-					font-size: 26px;
-					font-weight: 700;
-				}
-
-				.options {
-					text-align: left;
-					list-style: none;
-					font-size: 14px;
-					line-height: 22px;
-
-					.in i {
-						color: green;
-					}
-
-					.out {
-						color: rgb(47, 47, 47);
-					}
-				}
-				.btn {
-					margin-top: 22px;
-					padding: 8px 26px;
-					font-size: 13px;
-					font-weight: 700;
-					color: rgb(108, 108, 108);
-					border: transparent;
-					background-color: transparent;
-					border-radius: 8px;
-					box-shadow: 0px 0px 4px black;
-					cursor: pointer;
-					transition: 0.3s;
-				}
-
-				.btn:hover {
-					background-color: rgb(77, 160, 77);
-					box-shadow: 0px 0px 6px green;
-					color: aliceblue;
-				}
-			}
-
-			.card:hover {
-				transform: rotate(2deg);
+				
 			}
 		}
 		.toOffers {
-			text-decoration: none;
-			color: #145c00dd;
 			font-size: 18px;
 			margin-top: 20px;
-			transition: 0.3s;
-		}
-		.toOffers:hover {
-			transform: scale(1.05);
 		}
 
 		.offers-cards {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
 			.card {
 				margin: 30px;
 			}
 		}
 	}
+	
+	.contact-box {
+		flex-direction: row;
+		height: 400px;
+		.contact-form {
+			width: 50%;
+		}
+	}
+	footer {
+		.footer-menu {
+			.footer-logo {
+				transform: translateX(-30%);
+				font-size: 40px;
+			}
+			.footer-options {
+				.options-card {
+					margin: 0 24px;
+				}
+			}
+		}
+	}
+
+}
+
+@media (min-width: 992px) {
 
 	.contact-box {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 400px;
-		margin-top: 50px;
 		.contact-form {
-			display: flex;
-			flex-direction: column;
-			height: 100%;
-			width: 50%;
-			justify-content: center;
-			align-items: center;
-			font-size: 18px;
-			// background-color: #4d4d4d;
-
+	
 			p {
 				margin-bottom: 16px;
 			}
@@ -636,115 +766,36 @@ footer {
 			.email {
 				margin-top: 12px;
 			}
-			// .message{
-			// 	transform: translateX(-50px);
-			// }
 
 			input {
-				margin-bottom: 10px;
 				padding: 8px 22px;
 				font-size: 14px;
-				border: 1px solid royalblue;
-				border-radius: 5px;
 			}
 
 			textarea {
-				height: 140px;
-				max-height: 200px;
-				width: 400px;
+				width: 300px;
 				max-width: 500px;
 				padding: 8px 22px;
 				font-size: 14px;
-				border: 1px solid royalblue;
-				border-radius: 5px;
-			}
-			button {
-				display: flex;
-				transform: translateX(160px);
-				margin: 10px;
-				padding: 6px 12px;
-				border: none;
-				font-size: 14px;
-				border-radius: 5px;
-				background-color: royalblue;
-				color: #e2e0e0;
 			}
 		}
 		.contact-map {
-			display: flex;
-			height: 100%;
 			width: 50%;
-			justify-content: center;
-			align-items: center;
 		}
 	}
-
-	@keyframes pulse {
-		0% {
-			opacity: 0.6;
-		}
-
-		100% {
-			opacity: 0;
-			transform: scaleX(1.1) scaleY(1.6);
-		}
-	}
-
 	footer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		background-color: #e2e0e0;
-
 		.footer-menu {
-			// position: relative;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
 			height: 300px;
-			margin-top: 20px;
 
 			.footer-logo {
+				transform: translateX(0);
 				font-size: 60px;
-				color: #4d4d4d;
-				width: 50%;
-				text-align: center;
 			}
 			.footer-options {
-				// position: absolute;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				width: 50%;
 				.options-card {
 					margin: 0 35px;
-
-					.footer-list-title {
-						font-size: 18px;
-						font-weight: bold;
-						margin-bottom: 10px;
-					}
-					.footer-list {
-						line-height: 32px;
-						list-style: none;
-						.footer-option {
-							a {
-								color: #1e1e1e;
-								text-decoration: none;
-							}
-						}
-					}
 				}
 			}
-		}
-
-		.footer-bottom-text {
-			width: 100%;
-			text-align: center;
-			padding: 12px 0;
-			border-top: 1px solid black;
-			font-size: 12px;
 		}
 	}
 }
