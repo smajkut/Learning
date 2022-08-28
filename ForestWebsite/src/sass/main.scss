@@ -18,7 +18,7 @@ body {
 
 .wrapper {
 	display: flex;
-	width: 100%;
+	width: 95%;
 	align-items: center;
 	// justify-content: center;
 }
@@ -44,10 +44,58 @@ body {
 	}
 }
 
-.nav-menu {
+.hamburger-menu {
 	display: flex;
+	position: fixed;
+	flex-direction: column;
+	// justify-content: center;
+	align-items: flex-end;
+	right: 0;
+
+	z-index: 100;
+
+	.hamburger-btn {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		transform: translate(-20px, 2px);
+		margin: 8px;
+		width: 34px;
+		height: 34px;
+		cursor: pointer;
+
+		.nav-line {
+			width: 100%;
+			height: 3px;
+			background-color: rgb(65, 65, 65);
+			border-radius: 2px;
+		}
+	}
+	.hamburger-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px;
+		background-color: rgba(255, 255, 255, 0.8);
+		transition: .3s;
+
+		.ham-btn {
+			text-decoration: none;
+			font-size: 28px;
+			margin: 28px 0;
+			color: rgb(65, 65, 65);
+		}
+	}
+	.nonactive {
+		transform: translateX(300px);
+		transition: .3s;
+	}
+}
+
+.nav-menu {
+	display: none;
 	width: 50%;
-	justify-content: space-around;
+	// justify-content: space-around;
 	text-decoration: none;
 	margin-right: 20px;
 	.nav-btn {
@@ -418,7 +466,6 @@ footer {
 	}
 }
 
-
 @media (min-width: 567px) {
 	html {
 		scroll-padding-top: 40px;
@@ -437,13 +484,16 @@ footer {
 		margin-left: 0;
 	}
 
+	.hamburger-menu{
+		display: none;
+	}
+
 	.nav-menu {
 		display: flex;
 		width: 50%;
 		justify-content: space-around;
 		text-decoration: none;
 		margin-right: 0;
-		background-color: red;
 		.nav-btn {
 			display: flex;
 			height: 80px;
@@ -515,7 +565,6 @@ footer {
 			padding: 20px 60px;
 			font-size: 26px;
 		}
-		
 	}
 
 	.section {
@@ -531,7 +580,7 @@ footer {
 				.title {
 					font-size: 20px;
 				}
-				
+
 				.price {
 					margin: 10px 0;
 					font-size: 26px;
@@ -560,7 +609,7 @@ footer {
 			}
 		}
 	}
-	
+
 	.contact-box {
 		margin-top: 50px;
 		.contact-form {
@@ -632,30 +681,6 @@ footer {
 		margin-left: 0;
 	}
 
-	.nav-menu {
-		display: flex;
-		width: 50%;
-		justify-content: space-around;
-		text-decoration: none;
-		margin-right: 0;
-		.nav-btn {
-			display: flex;
-			height: 100px;
-			width: 100%;
-			text-decoration: none;
-			color: rgb(65, 65, 65);
-			font-size: 16px;
-			position: relative;
-			justify-content: center;
-			align-items: center;
-			transition: 0.3s;
-		}
-		.nav-btn:hover {
-			color: rgb(245, 245, 245);
-			background-color: rgb(12 20 30);
-		}
-	}
-
 	.header {
 		height: 500px;
 		background-image: url('/dist/img/stairs_b.jpg');
@@ -680,7 +705,6 @@ footer {
 	}
 
 	.about-us {
-
 		.about-us-contain {
 			.text {
 				margin-left: 40px;
@@ -689,11 +713,10 @@ footer {
 	}
 
 	.adventure-section {
-
 		h1 {
 			font-size: 32px;
 		}
-		
+
 		h1::before {
 			position: absolute;
 			width: 100%;
@@ -713,8 +736,6 @@ footer {
 
 			.card {
 				margin: 30px;
-
-				
 			}
 		}
 		.toOffers {
@@ -728,7 +749,7 @@ footer {
 			}
 		}
 	}
-	
+
 	.contact-box {
 		flex-direction: row;
 		height: 400px;
@@ -749,14 +770,11 @@ footer {
 			}
 		}
 	}
-
 }
 
 @media (min-width: 992px) {
-
 	.contact-box {
 		.contact-form {
-	
 			p {
 				margin-bottom: 16px;
 			}
