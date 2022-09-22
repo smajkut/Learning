@@ -32,19 +32,57 @@ body {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #fff;
-	transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.3s, color 0.3s, box-shadow .4s;
 }
 
 .nav-items a:hover {
 	background-color: #fff;
+	box-shadow: 0 0 10px 3px#fff;
 	color: royalblue;
 }
 
-.search-box{
+.search-box {
 	position: relative;
+	align-self: stretch;
 }
 
-.search-input{
-	padding: 1.6em;
+.search-input {
+	padding: 2em;
 	width: 22em;
+	background-color: #eee;
+	border: none;
+	color: #333;
+	font-size: 17px;
+	transform: translateX(0) scaleX(0);
+	transform-origin: right;
+	transition: transform 0.3s;
+}
+
+.search-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 80px;
+	border: none;
+	background-color: #3651aa;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+.search-btn:focus,
+.search-input:focus {
+	outline: none;
+}
+
+.search-btn:focus {
+	background-color: #253878;
+}
+
+.search-input:focus {
+	background-color: #ddd;
+}
+
+.active {
+	transform: translateX(-80px) scaleX(1);
 }
