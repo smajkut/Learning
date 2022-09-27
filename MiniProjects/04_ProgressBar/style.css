@@ -54,18 +54,25 @@ h1 {
 	width: 600px;
 }
 
-.progress-box::before{
+.progress-bar, .progress-box::before{
 	position: absolute;
-	content: '';
 	top: 50%;
 	transform: translateY(-50%);
 	height: 4px;
+	z-index: -1;
+
+}
+.progress-box::before{
+	content: '';
 	width: 100%;
 	background-color: #ddd;
-	z-index: -1;
 }
 
-.progress-bar
+.progress-bar{
+	width: 0%;
+	background-color: royalblue;
+	transition: width .3s;
+}
 
 .step {
 	display: flex;
@@ -77,4 +84,28 @@ h1 {
 	background-color: #fff;
 	border: 3px solid #ddd;
 	border-radius: 6px;
+}
+
+.active-step{
+	background-color: royalblue;
+	border-color: rgb(45, 82, 196);
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.btn{
+	padding: 0.7em 2em;
+	font-size: 18px;
+	color: #fff;
+	background-color: royalblue;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.btn:disabled{
+	background-color: rgb(135, 145, 177);
+	color: rgb(168, 171, 194);
+	cursor: default;
 }
