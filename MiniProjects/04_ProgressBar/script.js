@@ -12,12 +12,33 @@ const handleNextBtn = () => {
 	if (currentStep > steps.length) {
 		currentStep = steps.length
 	}
+	// console.log(currentStep);
+	handleProgressBar()
 }
 
 const handlePrevBtn = () => {
 	currentStep--
-
+	
 	if (currentStep < 1) {
-		currentStep = steps.length
+		currentStep = 1
 	}
+	// console.log(currentStep);
+	handleProgressBar()
+
 }
+
+const handleProgressBar = () => {
+	steps.forEach((step, index) => {
+		if(index<currentStep){
+			step.classList.add('active-step')
+		} else{
+			step.classList.remove('active-step')
+		}
+	})
+	const activeStep = document.querySelectorAll('.active-step')
+	// console.log((((activeStep.length-1) / (steps.length-1))*100+'%'))
+		progressBar.style.width = (((activeStep.length-1) / (steps.length-1))*100+'%')
+}
+
+nextBtn.addEventListener('click', handleNextBtn)
+prevBtn.addEventListener('click', handlePrevBtn)
