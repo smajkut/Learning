@@ -12,15 +12,32 @@ const handleCarousel = () => {
 	changeImage()
 }
 
-// let startCarousel = setInterval(handleCarousel, carouselSpeed)
+let startCarousel = setInterval(handleCarousel, carouselSpeed)
 
 const changeImage = () => {
 	if (index > carouselImages.length - 1) {
 		index = 0
 	} else if (index < 0) {
-		index = carouselImages - 1
+		index = carouselImages.length - 1
 	}
 	sliderBox.style.transform = `translateX(${-index * carouselWidth}px)`
 }
 
+const handleRightBtn = () => {
+	index++
+	resetInterval()
+}
 
+const handleLeftBtn = () => {
+	index--
+	resetInterval()
+}
+
+const resetInterval = () => {
+	changeImage()
+	clearInterval(startCarousel)
+	startCarousel = setInterval(handleCarousel, carouselSpeed)
+}
+
+rightBtn.addEventListener('click', handleRightBtn)
+leftBtn.addEventListener('click', handleLeftBtn)
