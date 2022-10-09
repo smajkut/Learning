@@ -6,9 +6,63 @@
 
 body {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	height: 100vh;
 	font-family: 'Montserrat', sans-serif;
+	background-color: rgb(37, 36, 80);
+}
+
+.btn {
+	padding: 0.5em 1em;
+	font-size: 1.6rem;
+	border: none;
+	border-radius: 6px;
+	background-color: #e5e5e5;
+	cursor: pointer;
+}
+
+p {
+	font-size: 3rem;
+	color: #fff;
+}
+
+.modal-btn {
+	position: absolute;
+	top: 10rem;
+}
+
+.modal {
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 2em;
+	width: 600px;
+	height: 200px;
+	top: 20rem;
+	border-radius: 6px;
+	background-color: #fff;
+}
+
+.modal-input {
+	padding: 1em;
+	width: 100%;
+	font-size: 1rem;
+	border-radius: 6px;
+}
+
+.error-msg {
+	margin: 1em 0;
+	font-size: 1rem;
+	color: tomato;
+}
+.text{
+	margin-bottom: -30rem;
+}
+.active {
+	display: flex;
 }
