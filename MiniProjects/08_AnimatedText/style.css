@@ -31,7 +31,7 @@ p {
 
 .modal-btn {
 	position: absolute;
-	top: 10rem;
+	top: 5rem;
 }
 
 .modal {
@@ -43,7 +43,7 @@ p {
 	padding: 2em;
 	width: 600px;
 	height: 200px;
-	top: 20rem;
+	top: 12rem;
 	border-radius: 6px;
 	background-color: #fff;
 }
