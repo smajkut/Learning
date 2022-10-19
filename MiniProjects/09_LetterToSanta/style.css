@@ -46,10 +46,10 @@ h1 {
 	align-items: center;
 	padding: 1em;
 	font-size: 3rem;
-	border-radius: 8px;
+	border-radius: 15%;
 	background-color: #fff;
 	border: 1px solid black;
-	transition: background-color 0.3;
+	transition: background-color 0.2s;
 	cursor: grab;
 }
 
@@ -66,7 +66,7 @@ h1 {
 	display: block;
 	margin: 0 auto;
 	padding: 1em 3em;
-	font-size: 1.4;
+	font-size: 1.4rem;
 	background-color: #377526;
 	border-radius: 8px;
 	border: none;
