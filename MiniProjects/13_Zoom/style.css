@@ -12,3 +12,15 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #444;
 }
+
+.img-box {
+	overflow: hidden;
+}
+
+img {
+	transition: transform 0.4s;
+}
+.zoom-img {
+	cursor: zoom-in;
+	transform: scale(2);
+}
