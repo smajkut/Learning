@@ -1,6 +1,7 @@
 const menuItems = document.querySelectorAll('a')
 const scrollSpySections = document.querySelectorAll('.section')
 const navv = document.querySelector('nav')
+const lastSection = document.querySelector('a:last-of-type')
 
 const handleScrollSpy = () => {
 	if (document.body.classList.contains('main-page')) {
@@ -14,7 +15,7 @@ const handleScrollSpy = () => {
 			// console.log(`Wysokość każdej sekcji ${section.offsetHeight}`)
 			//wysokość każdej z sekcji
 
-			if(window.scrollY <= section.offsetTop + section.offsetHeight){
+			if(window.scrollY <= section.offsetTop + section.offsetHeight - 103){
 				sections.push(section)
 
 				const activeSection = document.querySelector(`[href*="${sections[0].id}"]`)
@@ -22,6 +23,11 @@ const handleScrollSpy = () => {
 				menuItems.forEach(item => item.classList.remove('active'))
 
 				activeSection.classList.add('active')
+			}
+
+			if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 160){
+				menuItems.forEach(item => item.classList.remove('active'))
+				lastSection.classList.add('active')
 			}
 		})
 	}
