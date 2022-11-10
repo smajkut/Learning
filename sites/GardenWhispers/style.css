@@ -64,8 +64,6 @@ button {
 	cursor: pointer;
 }
 
-.burger-menu::before,
-.burger-menu::after,
 .burger-menu div {
 	background-color: var(--font-color-1);
 	content: '';
@@ -76,14 +74,13 @@ button {
 	transition: 0.3s;
 }
 
-.burger-menu:hover:before {
+.bar-a-1 {
 	transform: translateY(10px) rotate(-135deg) scale(0.9);
 }
-.burger-menu:hover:after {
+.bar-a-3 {
 	transform: translateY(-9px) rotate(315deg) scale(0.9);
 }
-.burger-menu:hover div {
-	/* transform: scale(0); */
+.bar-a-2 {
 	animation: crossing 0.6s forwards;
 }
 
@@ -155,13 +152,43 @@ main {
 
 .wallpaper-section-carousel-btns {
 	display: flex;
-	right: 0;
-	font-size: 20px;
-	background-color: #222;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
+	flex-direction: row;
+	justify-content: flex-end;
+	/* background-color: rgba(17, 17, 17, 0.335); */
 }
+
+.wallpaper-section-carousel-btn {
+	right: 0;
+	/* display: flex; */
+	/* flex-direction: row; */
+	margin: 0 8px;
+	border: 1px solid #222;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	transition: all 0.2s;
+}
+
+.active-carousel-btn {
+	box-shadow: 0 0 3px 3px #555;
+	transform: scale(0.8);
+}
+
+.sidebar{
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--body-color-1);
+	justify-content: center;
+}
+
+.sidebar-item{
+	list-style: none;
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+
 
 @keyframes crossing {
 	0% {
