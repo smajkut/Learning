@@ -9,9 +9,10 @@ html {
 }
 
 :root {
-	--body-color-1: #c9d8cb;
-	/* --body-color-2: #c9d8cb; */
-	/* --body-color-3: #c9d8cb; */
+	--body-color: #c9d8cb;
+	--b-color-1: #c9d8cb;
+	--b-color-2: #d9dee2;
+	--b-color-3: #f1e2c5;
 	--font-color-1: #222;
 	--body-color-dark: rgb(28, 31, 29);
 	--nav-height: 58px;
@@ -28,17 +29,14 @@ body {
 	margin: 0 10px;
 }
 
-.hide {
-	display: none;
-}
-
 .navigation {
 	position: fixed;
 	align-items: center;
 	width: 100%;
 	/* height: auto; */
 	height: var(--nav-height);
-	background-color: var(--body-color-1);
+	background-color: var(--body-color);
+	transition: background-color 0.5s;
 }
 
 .nav-header {
@@ -112,7 +110,8 @@ body {
 	flex-direction: column;
 	width: 100vw;
 	height: 100vh;
-	background-color: var(--body-color-1);
+	background-color: var(--body-color);
+	transition: background-color 0.5s;
 	transform: translateY(-100vh);
 	z-index: 99;
 	transition: all 0.3s;
@@ -148,72 +147,162 @@ main {
 .wallpaper-section {
 	display: flex;
 	flex-direction: column;
-	background-color: var(--body-color-1);
+	background-color: var(--body-color);
+	transition: background-color 0.5s;
+	align-items: center;
+	overflow: hidden;
 }
+
+/* Collection Heading Images */
+
 .wallpaper-section-heading-imgs {
-	display: flex;
-	flex-direction: row;
-	overflow: hidden;
-	/* transform: translateX(-120%); */
-}
-
-.wallpaper-section-heading-imgs img {
-	width: 100%;
-	height: auto;
-	padding: 10% 0 10% 20%;
-}
-.wallpaper-section-heading {
-	display: flex;
-	flex-direction: row;
+	height: 350px;
+	width: 350px;
 	overflow: hidden;
 }
 
-.wallpaper-section-heading h5 {
-	min-width: 100%;
+.wallpaper-section-heading-imgs-box {
+	display: flex;
+	/* padding: 10% 0 10% 20%; */
+	transform: translateX(0);
+	transition: transform 0.5s;
+	/* background-color: #fff; */
+	/* border: 1px solid black; */
+}
+
+.wallpaper-section-heading-img {
+	max-width: 100%;
+	max-height: 100%;
+	padding: 10% 1% 10% 20%;
+	/* border: 1px solid black; */
+	/* object-fit: cover; */
+	/* margin: 20px 20px 50px 30px */
+}
+
+/* Collection Headings */
+
+.collection-headings {
+	/* height: 15px; */
+	width: 350px;
+	/* background-color: #fff; */
+	overflow: hidden;
+}
+
+.collection-heading-box {
+	display: flex;
+	/* padding: 10% 0 10% 20%; */
+	transform: translateX(0);
+	transition: transform 0.5s;
+	/* width: 350px; */
+	/* background-color: #fff; */
+	/* width: 150px; */
+}
+
+.collection-heading-item {
+	/* border: 1px solid black; */
+	/* background-color: #fff; */
 	text-transform: uppercase;
+	min-width: 350px;
+	/* max-height: 100%; */
 	font-size: 14px;
 	font-weight: 300;
 	letter-spacing: 2px;
-	margin-left: 10px;
 }
 
-.wallpaper-section-title h3 {
+/* Collection Heading Titles */
+
+.collection-titles {
+	width: 350px;
+	overflow: hidden;
+}
+
+.collection-title-box {
+	display: flex;
+	transform: translateX(0);
+	transition: transform 0.5s;
+}
+
+.collection-title-item {
+	min-width: 350px;
+	height: 60px;
+	margin: 14px 0;
 	font-family: 'Cormorant Garamond', serif;
 	font-weight: 400;
 	font-size: 28px;
-	margin: 14px 0;
 }
 
-.wallpaper-section-text p {
+/* Collection Heading Texts */
+
+.collection-texts {
+	width: 350px;
+	overflow: hidden;
+}
+
+.collection-text-box {
+	display: flex;
+	transform: translateX(0);
+	transition: transform 0.5s;
+}
+
+.collection-text-item {
+	min-width: 350px;
 	font-weight: 400;
 	font-size: 12px;
 	letter-spacing: 1px;
 	line-height: 24px;
 	margin-bottom: 30px;
+	height: 200px;
+}
+
+/* Collection Gallery */
+
+.collection-gallery {
+	width: 350px;
+	overflow: hidden;
+}
+
+.collection-gallery-box {
+	display: flex;
+	transform: translateX(0);
+	transition: transform 0.5s;
+}
+
+.collection-gallery-item {
+	min-width: 350px;
+	margin: 20px 0;
+}
+
+.collection-btn-box{
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
+	margin-left: 30px;
 }
 
 .collection-btn {
 	font-family: 'Raleway', sans-serif;
-	width: 230px;
+	width: 200px;
 	text-align: center;
-	color: var(--body-color-1);
+	color: var(--body-color);
+	transition: color 0.5s;
 	background-color: var(--body-color-dark);
 	text-transform: uppercase;
-	padding: 8px 22px;
+	font-size: 14px;
+	padding: 8px 0px;
 	border: none;
 	cursor: pointer;
 	box-shadow: 0 0 6px 2px #444;
 }
 
-.wallpaper-section-carousel-btns {
+.collection-carousel-btns {
 	display: flex;
-	flex-direction: row;
+	width: 100%;
 	justify-content: flex-end;
+	margin-right: 50px;
 }
 
-.wallpaper-section-carousel-btn {
-	right: 0;
-	margin: 12px 8px;
+.collection-carousel-btn {
+	margin: 0px 8px;
 	border: 1px solid #222;
 	width: 16px;
 	height: 16px;
