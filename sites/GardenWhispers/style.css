@@ -36,7 +36,7 @@ body {
 	/* height: auto; */
 	height: var(--nav-height);
 	background-color: var(--body-color);
-	transition: background-color 0.5s;
+	transition: all 0.5s;
 	z-index: 100000;
 }
 
@@ -259,6 +259,7 @@ main {
 /* Collection Gallery */
 
 .collection-gallery {
+	margin: 30px 0;
 	width: 350px;
 	overflow: hidden;
 }
@@ -316,14 +317,6 @@ main {
 
 .active-carousel-btn {
 	box-shadow: 0 0 6px 2px #444;
-}
-
-.wallpaper-section-images {
-	margin-top: 30px;
-}
-.wallpaper-section-images img {
-	width: 100%;
-	height: auto;
 }
 
 /* END OF COLLECTION SECTION */

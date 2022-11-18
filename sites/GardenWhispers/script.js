@@ -3,6 +3,7 @@ const bar1 = document.querySelector('.bar-1')
 const bar2 = document.querySelector('.bar-2')
 const bar3 = document.querySelector('.bar-3')
 const navHeader = document.querySelector('.nav-header')
+const mainNav = document.querySelector('.navigation')
 const sidebar = document.querySelector('.sidebar')
 const collectionBtn = document.querySelector('.collection-btn')
 
@@ -37,14 +38,21 @@ const burgerMenuActive = () => {
 	collectionBtn.classList.toggle('hide') // do naprawy
 }
 
-const navHeaderColorChanger = () => {
-	if (window.scrollY > 100) {
-		navHeader.style.color = '#999'
-		navHeader.style.filter = 'drop-shadow( 0 0 12px #fff)'
+const navEfects = () => {
+	if (window.scrollY > 50) {
+		navHeader.style.color = '#00848C'
+		navHeader.style.filter = 'drop-shadow( 0 0 14px #48CFAF)'
 	} else {
 		navHeader.style.color = '#222'
 		navHeader.style.filter = ''
 	}
+
+	if (window.scrollY > 50) {
+		mainNav.style.boxShadow = '0 0 20px 1px #004156'
+	} else {
+		mainNav.style.boxShadow = ''
+	}
+
 }
 
 const handleCollectionCarousel = () => {
@@ -171,4 +179,4 @@ collectionCarouselBtns.forEach((btn) => {
 })
 
 burgerMenu.addEventListener('click', burgerMenuActive)
-window.addEventListener('scroll', navHeaderColorChanger)
+window.addEventListener('scroll', navEfects)
