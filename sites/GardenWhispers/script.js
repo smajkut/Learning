@@ -2,6 +2,7 @@ const burgerMenu = document.querySelector('.burger-menu')
 const bar1 = document.querySelector('.bar-1')
 const bar2 = document.querySelector('.bar-2')
 const bar3 = document.querySelector('.bar-3')
+const navHeader = document.querySelector('.nav-header')
 const sidebar = document.querySelector('.sidebar')
 const collectionBtn = document.querySelector('.collection-btn')
 
@@ -36,6 +37,16 @@ const burgerMenuActive = () => {
 	collectionBtn.classList.toggle('hide') // do naprawy
 }
 
+const navHeaderColorChanger = () => {
+	if (window.scrollY > 100) {
+		navHeader.style.color = '#999'
+		navHeader.style.filter = 'drop-shadow( 0 0 12px #fff)'
+	} else {
+		navHeader.style.color = '#222'
+		navHeader.style.filter = ''
+	}
+}
+
 const handleCollectionCarousel = () => {
 	indexCollectionHeadingImgCarousel++
 	indexCollectionHeadingCarousel++
@@ -51,7 +62,7 @@ const handleCollectionCarousel = () => {
 	activateCarouselBtn()
 }
 
-let startCollectionCarousel = setInterval(handleCollectionCarousel, 5000)
+let startCollectionCarousel = setInterval(handleCollectionCarousel, 6000)
 
 const changeCollectionHeadingImg = () => {
 	if (indexCollectionHeadingImgCarousel > collectionHeadingImages.length - 1) {
@@ -124,6 +135,40 @@ const activateCarouselBtn = () => {
 	collectionCarouselBtns[indexCollectionHeadingImgCarousel].classList.add('active-carousel-btn')
 }
 
-const handleCollectionCarouselBtns = (params) => {}
+const handleCollectionCarouselBtns = (e) => {
+	if (e.target.classList.contains('c-btn-1')) {
+		indexCollectionHeadingImgCarousel = 0
+		indexCollectionHeadingCarousel = 0
+		indexCollectionTitleCarousel = 0
+		indexCollectionTextCarousel = 0
+		indexCollectionGalleryCarousel = 0
+	} else if (e.target.classList.contains('c-btn-2')) {
+		indexCollectionHeadingImgCarousel = 1
+		indexCollectionHeadingCarousel = 1
+		indexCollectionTitleCarousel = 1
+		indexCollectionTextCarousel = 1
+		indexCollectionGalleryCarousel = 1
+	} else if (e.target.classList.contains('c-btn-3')) {
+		indexCollectionHeadingImgCarousel = 2
+		indexCollectionHeadingCarousel = 2
+		indexCollectionTitleCarousel = 2
+		indexCollectionTextCarousel = 2
+		indexCollectionGalleryCarousel = 2
+	}
+	changeCollectionHeadingImg()
+	changeCollectionHeading()
+	changeCollectionTitle()
+	changeCollectionText()
+	changeCollectionGallery()
+	bodyColorChanger()
+	activateCarouselBtn()
+	clearInterval(startCollectionCarousel)
+	startCollectionCarousel = setInterval(handleCollectionCarousel, 10000)
+}
+
+collectionCarouselBtns.forEach((btn) => {
+	btn.addEventListener('click', handleCollectionCarouselBtns)
+})
 
 burgerMenu.addEventListener('click', burgerMenuActive)
+window.addEventListener('scroll', navHeaderColorChanger)
