@@ -24,6 +24,11 @@ const collectionGallery = document.querySelectorAll('.collection-gallery-item')
 
 const collectionCarouselBtns = document.querySelectorAll('.collection-carousel-btn')
 
+const patternGalleryBox = document.querySelector('.pattern-gallery-img-box')
+const patternGalleryImages = document.querySelectorAll('.pattern-gallery-img-box img')
+const patternBtnLeft = document.querySelector('.pattern-arrow-left')
+const patternBtnRight = document.querySelector('.pattern-arrow-right')
+
 let indexCollectionHeadingImgCarousel = 0
 let indexCollectionHeadingCarousel = 0
 let indexCollectionTitleCarousel = 0
@@ -52,7 +57,6 @@ const navEfects = () => {
 	} else {
 		mainNav.style.boxShadow = ''
 	}
-
 }
 
 const handleCollectionCarousel = () => {
@@ -174,9 +178,45 @@ const handleCollectionCarouselBtns = (e) => {
 	startCollectionCarousel = setInterval(handleCollectionCarousel, 10000)
 }
 
+let patternGalleryScroll = patternGalleryBox.scrollLeft
+
+const patternBtnDisabled = () => {
+	if (patternGalleryScroll < 100) {
+		patternBtnLeft.style.opacity = '0.5'
+	} else {
+		patternBtnLeft.style.opacity = '1'
+	}
+
+	if(patternGalleryScroll > ((patternGalleryImages.length - 2) * 320)){
+		patternBtnRight.style.opacity = '0.5'
+	} else {
+		patternBtnRight.style.opacity = '1'
+	}
+}
+const handlePatternGalleryRight = () => {
+	patternGalleryBox.scrollLeft += 300
+	// patternBtnDisabled()
+	console.log(patternGalleryScroll)
+}
+const handlePatternGalleryLeft = () => {
+	patternGalleryBox.scrollLeft -= 300
+	// patternBtnDisabled()
+	console.log(patternGalleryScroll)
+}
+
+
 collectionCarouselBtns.forEach((btn) => {
 	btn.addEventListener('click', handleCollectionCarouselBtns)
 })
 
 burgerMenu.addEventListener('click', burgerMenuActive)
 window.addEventListener('scroll', navEfects)
+
+patternGalleryBox.addEventListener('scroll', () => {
+	patternGalleryScroll = patternGalleryBox.scrollLeft;
+	console.log(patternGalleryScroll);
+	patternBtnDisabled()
+})
+patternBtnDisabled()
+patternBtnRight.addEventListener('click', handlePatternGalleryRight)
+patternBtnLeft.addEventListener('click', handlePatternGalleryLeft)

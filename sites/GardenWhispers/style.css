@@ -52,7 +52,7 @@ body {
 	color: #222;
 	z-index: 100;
 	font-weight: 600;
-	transition: all .3s;
+	transition: all 0.3s;
 }
 
 .burger-menu {
@@ -275,7 +275,7 @@ main {
 	margin: 20px 0;
 }
 
-.collection-btn-box{
+.collection-btn-box {
 	display: flex;
 	width: 100%;
 	justify-content: flex-start;
@@ -295,7 +295,6 @@ main {
 	border: none;
 	cursor: pointer;
 	box-shadow: 0 0 6px 2px #444;
-	
 }
 
 .collection-carousel-btns {
@@ -322,19 +321,110 @@ main {
 /* END OF COLLECTION SECTION */
 /* START OF PATTERN SECTION */
 
-.pattern-section{
+.pattern-section {
 	display: flex;
 	flex-direction: column;
 	margin-top: 20px;
 }
 
-.pattern-section-title{
+.pattern-section-title {
 	font-family: 'Cormorant Garamond', serif;
 	text-align: center;
 	font-size: 26px;
 	padding: 40px 0 60px 0;
 }
 
+.pattern-btns {
+	display: flex;
+	text-transform: uppercase;
+	font-size: 12px;
+	align-items: center;
+	/* background-color: #ddd; */
+}
+
+.pattern-title {
+	flex-grow: 1;
+}
+
+.pattern-btns i {
+	font-size: 30px;
+	padding: 0 16px;
+	color: #444;
+	cursor: pointer;
+}
+
+/* .pattern-arrow-left .fa-arrow-left-long {
+	opacity: 50%;
+} */
+
+.pattern-gallery-heading {
+	min-width: 350px;
+	height: 60px;
+	margin: 14px 0;
+	font-family: 'Cormorant Garamond', serif;
+	font-weight: 400;
+	font-size: 28px;
+	letter-spacing: 2px;
+}
+
+.pattern-gallery-img-box {
+	display: flex;
+	margin-bottom: 50px;
+	overflow-x: scroll;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+}
+
+.pattern-gallery-img-box::-webkit-scrollbar {
+	height: 5px;
+	transition: 0.2s;
+}
+
+.pattern-gallery-img-box::-webkit-scrollbar-track {
+	background-color: #e4e4e4;
+	border-radius: 100px;
+}
+
+.pattern-gallery-img-box::-webkit-scrollbar-thumb {
+	background-color: #666666;
+	border-radius: 10px;
+}
+
+.pattern-gallery-item {
+	width: 300px;
+	min-height: 380px;
+	margin-right: 20px;
+	scroll-snap-align: start;
+}
+
+.pattern-gallery-img-container {
+	position: relative;
+	display: flex;
+	width: 300px;
+	height: 380px;
+	overflow: hidden;
+}
+
+.pattern-gallery-item img {
+	position: absolute;
+	/* overflow: hidden; */
+	width: 300px;
+	height: 380px;
+	object-fit: cover;
+	object-position: center;
+	transition: transform 0.3s;
+	/* padding: 30px; */
+}
+
+.pattern-gallery-item img:hover {
+	transform: scale(1.1);
+}
+
+.pattern-gallery-item p {
+	margin: 8px;
+	letter-spacing: 1px;
+	font-size: 18px;
+}
 
 @keyframes crossing {
 	0% {
