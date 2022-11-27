@@ -45,15 +45,16 @@ const burgerMenuActive = () => {
 
 const navEfects = () => {
 	if (window.scrollY > 50) {
-		navHeader.style.color = '#00848C'
-		navHeader.style.filter = 'drop-shadow( 0 0 14px #48CFAF)'
+		navHeader.style.color = '#0c473a'
+		navHeader.style.filter = 'drop-shadow( 0 0 14px #093a2f)'
 	} else {
 		navHeader.style.color = '#222'
 		navHeader.style.filter = ''
 	}
 
+
 	if (window.scrollY > 50) {
-		mainNav.style.boxShadow = '0 0 20px 1px #004156'
+		mainNav.style.boxShadow = '0 0 20px 1px #093a2f'
 	} else {
 		mainNav.style.boxShadow = ''
 	}
@@ -214,7 +215,6 @@ window.addEventListener('scroll', navEfects)
 
 patternGalleryBox.addEventListener('scroll', () => {
 	patternGalleryScroll = patternGalleryBox.scrollLeft;
-	console.log(patternGalleryScroll);
 	patternBtnDisabled()
 })
 patternBtnDisabled()
