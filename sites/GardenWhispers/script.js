@@ -29,11 +29,19 @@ const patternGalleryImages = document.querySelectorAll('.pattern-gallery-img-box
 const patternBtnLeft = document.querySelector('.pattern-arrow-left')
 const patternBtnRight = document.querySelector('.pattern-arrow-right')
 
+const interiorParalaxSmall = document.querySelector('.interior-img-small') 
+
 let indexCollectionHeadingImgCarousel = 0
 let indexCollectionHeadingCarousel = 0
 let indexCollectionTitleCarousel = 0
 let indexCollectionTextCarousel = 0
 let indexCollectionGalleryCarousel = 0
+
+let valueY
+
+const valueYRefresh = () => {
+	valueY = window.scrollY
+}
 
 const burgerMenuActive = () => {
 	bar1.classList.toggle('bar-a-1')
@@ -205,6 +213,12 @@ const handlePatternGalleryLeft = () => {
 	console.log(patternGalleryScroll)
 }
 
+const interiorParalax = () => {
+	interiorParalaxSmall.style.top = 22 + (valueY * 1.3)/100 + '%';
+	interiorParalaxSmall.style.transform = 'translateY(-50%)';
+}
+
+window.addEventListener('scroll', valueYRefresh)
 
 collectionCarouselBtns.forEach((btn) => {
 	btn.addEventListener('click', handleCollectionCarouselBtns)
@@ -220,3 +234,5 @@ patternGalleryBox.addEventListener('scroll', () => {
 patternBtnDisabled()
 patternBtnRight.addEventListener('click', handlePatternGalleryRight)
 patternBtnLeft.addEventListener('click', handlePatternGalleryLeft)
+
+window.addEventListener('scroll', interiorParalax)
