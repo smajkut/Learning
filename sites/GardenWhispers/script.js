@@ -5,10 +5,10 @@ const bar3 = document.querySelector('.bar-3')
 const navHeader = document.querySelector('.nav-header')
 const mainNav = document.querySelector('.navigation')
 const sidebar = document.querySelector('.sidebar')
-const collectionBtn = document.querySelector('.collection-btn')
 
 const collectionHeadingImgBox = document.querySelector('.wallpaper-section-heading-imgs-box')
 const collectionHeadingImages = document.querySelectorAll('.wallpaper-section-heading-img')
+const collectionHeadingSimpleImg = document.querySelector('.wallpaper-section-heading-imgs')
 
 const collectionHeadingBox = document.querySelector('.collection-heading-box')
 const collectionHeadings = document.querySelectorAll('.collection-heading-item')
@@ -29,6 +29,11 @@ const patternGalleryImages = document.querySelectorAll('.pattern-gallery-img-box
 const patternBtnLeft = document.querySelector('.pattern-arrow-left')
 const patternBtnRight = document.querySelector('.pattern-arrow-right')
 
+const fabricsGalleryBox = document.querySelector('.fabrics-gallery-img-box')
+const fabricsGalleryImages = document.querySelectorAll('.fabrics-gallery-img-box img')
+const fabricsBtnLeft = document.querySelector('.fabrics-arrow-left')
+const fabricsBtnRight = document.querySelector('.fabrics-arrow-right')
+
 const interiorParalaxSmall = document.querySelector('.interior-img-small') 
 
 let indexCollectionHeadingImgCarousel = 0
@@ -41,6 +46,7 @@ let valueY
 
 const valueYRefresh = () => {
 	valueY = window.scrollY
+	
 }
 
 const burgerMenuActive = () => {
@@ -48,7 +54,6 @@ const burgerMenuActive = () => {
 	bar2.classList.toggle('bar-a-2')
 	bar3.classList.toggle('bar-a-3')
 	sidebar.classList.toggle('sidebar-show')
-	collectionBtn.classList.toggle('hide') // do naprawy
 }
 
 const navEfects = () => {
@@ -92,7 +97,7 @@ const changeCollectionHeadingImg = () => {
 		indexCollectionHeadingImgCarousel = collectionHeadingImages.length - 1
 	}
 	collectionHeadingImgBox.style.transform = `translateX(${
-		-indexCollectionHeadingImgCarousel * collectionHeadingImages[indexCollectionHeadingImgCarousel].offsetWidth
+		-indexCollectionHeadingImgCarousel * collectionHeadingSimpleImg.offsetWidth
 	}px)`
 }
 const changeCollectionHeading = () => {
@@ -204,19 +209,40 @@ const patternBtnDisabled = () => {
 }
 const handlePatternGalleryRight = () => {
 	patternGalleryBox.scrollLeft += 300
-	// patternBtnDisabled()
-	console.log(patternGalleryScroll)
 }
 const handlePatternGalleryLeft = () => {
 	patternGalleryBox.scrollLeft -= 300
-	// patternBtnDisabled()
-	console.log(patternGalleryScroll)
+}
+
+let fabricsGalleryScroll = fabricsGalleryBox.scrollLeft
+
+const fabricsBtnDisabled = () => {
+	if (fabricsGalleryScroll < 100) {
+		fabricsBtnLeft.style.opacity = '0.5'
+	} else {
+		fabricsBtnLeft.style.opacity = '1'
+	}
+
+	if(fabricsGalleryScroll > ((fabricsGalleryImages.length - 2) * 320)){
+		fabricsBtnRight.style.opacity = '0.5'
+	} else {
+		fabricsBtnRight.style.opacity = '1'
+	}
+}
+const handleFabricsGalleryRight = () => {
+	fabricsGalleryBox.scrollLeft += 300
+}
+const handleFabricsGalleryLeft = () => {
+	fabricsGalleryBox.scrollLeft -= 300
 }
 
 const interiorParalax = () => {
-	interiorParalaxSmall.style.top = 22 + (valueY * 1.3)/100 + '%';
-	interiorParalaxSmall.style.transform = 'translateY(-50%)';
+	let paralaxTranslateY = -250 + (valueY * 4)/100 + '%'
+	let paralaxTranslateX = '95%'
+	interiorParalaxSmall.style.transform = `translate(${paralaxTranslateX},${paralaxTranslateY})`;
 }
+
+//addEventListener
 
 window.addEventListener('scroll', valueYRefresh)
 
@@ -234,5 +260,13 @@ patternGalleryBox.addEventListener('scroll', () => {
 patternBtnDisabled()
 patternBtnRight.addEventListener('click', handlePatternGalleryRight)
 patternBtnLeft.addEventListener('click', handlePatternGalleryLeft)
+
+fabricsGalleryBox.addEventListener('scroll', () => {
+	fabricsGalleryScroll = fabricsGalleryBox.scrollLeft;
+	fabricsBtnDisabled()
+})
+fabricsBtnDisabled()
+fabricsBtnRight.addEventListener('click', handleFabricsGalleryRight)
+fabricsBtnLeft.addEventListener('click', handleFabricsGalleryLeft)
 
 window.addEventListener('scroll', interiorParalax)
