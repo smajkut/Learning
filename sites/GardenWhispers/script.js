@@ -8,18 +8,22 @@ const sidebar = document.querySelector('.sidebar')
 
 const collectionHeadingImgBox = document.querySelector('.wallpaper-section-heading-imgs-box')
 const collectionHeadingImages = document.querySelectorAll('.wallpaper-section-heading-img')
-const collectionHeadingSimpleImg = document.querySelector('.wallpaper-section-heading-imgs')
+const collectionHeadingSingleImg = document.querySelector('.wallpaper-section-heading-imgs')
 
 const collectionHeadingBox = document.querySelector('.collection-heading-box')
 const collectionHeadings = document.querySelectorAll('.collection-heading-item')
+const collectionSingleHeading = document.querySelector('.collection-headings')
 
 const collectionTitleBox = document.querySelector('.collection-title-box')
 const collectionTitles = document.querySelectorAll('.collection-title-item')
+const collectionSingleTitle = document.querySelector('.collection-titles')
 
 const collectionTextBox = document.querySelector('.collection-text-box')
 const collectionTexts = document.querySelectorAll('.collection-text-item')
+const collectionSigleText = document.querySelector('.collection-texts')
 
 const collectionGalleryBox = document.querySelector('.collection-gallery-box')
+const collectionGallerySingle = document.querySelector('.collection-gallery')
 const collectionGallery = document.querySelectorAll('.collection-gallery-item')
 
 const collectionCarouselBtns = document.querySelectorAll('.collection-carousel-btn')
@@ -57,7 +61,7 @@ const burgerMenuActive = () => {
 }
 
 const navEfects = () => {
-	if (window.scrollY > 50) {
+	if (window.scrollY > 20) {
 		navHeader.style.color = '#0c473a'
 		navHeader.style.filter = 'drop-shadow( 0 0 14px #093a2f)'
 	} else {
@@ -66,7 +70,7 @@ const navEfects = () => {
 	}
 
 
-	if (window.scrollY > 50) {
+	if (window.scrollY > 30) {
 		mainNav.style.boxShadow = '0 0 20px 1px #093a2f'
 	} else {
 		mainNav.style.boxShadow = ''
@@ -97,7 +101,7 @@ const changeCollectionHeadingImg = () => {
 		indexCollectionHeadingImgCarousel = collectionHeadingImages.length - 1
 	}
 	collectionHeadingImgBox.style.transform = `translateX(${
-		-indexCollectionHeadingImgCarousel * collectionHeadingSimpleImg.offsetWidth
+		-indexCollectionHeadingImgCarousel * collectionHeadingSingleImg.offsetWidth
 	}px)`
 }
 const changeCollectionHeading = () => {
@@ -107,7 +111,7 @@ const changeCollectionHeading = () => {
 		indexCollectionHeadingCarousel = collectionHeadings.length - 1
 	}
 	collectionHeadingBox.style.transform = `translateX(${
-		-indexCollectionHeadingCarousel * collectionHeadings[indexCollectionHeadingCarousel].offsetWidth
+		-indexCollectionHeadingCarousel * collectionSingleHeading.offsetWidth
 	}px)`
 }
 
@@ -118,7 +122,7 @@ const changeCollectionTitle = () => {
 		indexCollectionTitleCarousel = collectionTitles.length - 1
 	}
 	collectionTitleBox.style.transform = `translateX(${
-		-indexCollectionTitleCarousel * collectionTitles[indexCollectionTitleCarousel].offsetWidth
+		-indexCollectionTitleCarousel * collectionSingleTitle.offsetWidth
 	}px)`
 }
 
@@ -129,7 +133,7 @@ const changeCollectionText = () => {
 		indexCollectionTextCarousel = collectionTexts.length - 1
 	}
 	collectionTextBox.style.transform = `translateX(${
-		-indexCollectionTextCarousel * collectionTexts[indexCollectionTextCarousel].offsetWidth
+		-indexCollectionTextCarousel * collectionSigleText.offsetWidth
 	}px)`
 }
 
@@ -140,7 +144,7 @@ const changeCollectionGallery = () => {
 		indexCollectionGalleryCarousel = collectionGallery.length - 1
 	}
 	collectionGalleryBox.style.transform = `translateX(${
-		-indexCollectionGalleryCarousel * collectionGallery[indexCollectionGalleryCarousel].offsetWidth
+		-indexCollectionGalleryCarousel * collectionGallerySingle.offsetWidth
 	}px)`
 }
 
@@ -237,9 +241,12 @@ const handleFabricsGalleryLeft = () => {
 }
 
 const interiorParalax = () => {
-	let paralaxTranslateY = -250 + (valueY * 4)/100 + '%'
-	let paralaxTranslateX = '95%'
-	interiorParalaxSmall.style.transform = `translate(${paralaxTranslateX},${paralaxTranslateY})`;
+	let paralaxTranslateYInterior = -250 + (valueY * 4)/100 + '%'
+	interiorParalaxSmall.style.transform = `translateY(${paralaxTranslateYInterior})`;
+}
+
+const paralaxBox = () => {
+	interiorParalax()
 }
 
 //addEventListener
@@ -269,4 +276,4 @@ fabricsBtnDisabled()
 fabricsBtnRight.addEventListener('click', handleFabricsGalleryRight)
 fabricsBtnLeft.addEventListener('click', handleFabricsGalleryLeft)
 
-window.addEventListener('scroll', interiorParalax)
+window.addEventListener('scroll', paralaxBox)
