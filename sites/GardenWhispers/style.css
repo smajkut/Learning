@@ -1712,7 +1712,7 @@ main {
 	}
 
 	.discover-text {
-		padding-right: 20px;
+		padding-right: 100px;
 	}
 
 	.discover-text p {
@@ -1777,67 +1777,63 @@ main {
 		margin-bottom: 30px;
 	}
 
-	.prefooter-section {
-		display: flex;
-		/* flex-direction: column; */
-		background-color: #d9dee2;
-		text-align: center;
-	}
-
 	.info-rowgroup {
 		display: flex;
 		flex-direction: row;
 	}
 
+	.info-box {
+		padding: 0 25px;
+		margin-bottom: 44px;
+	}
+
 	.prefooter-section i {
-		font-size: 30px;
+		font-size: 26px;
 		margin: 44px 0;
-		filter: brightness(2);
 	}
 
 	.prefooter-section .info-title {
-		font-size: 26px;
+		font-size: 24px;
 		margin-bottom: 38px;
 	}
 
 	.prefooter-section .info-text,
 	.prefooter-section .shipping {
 		font-size: 12px;
-		text-transform: uppercase;
 		letter-spacing: 2px;
 		line-height: 22px;
 	}
 
-	.prefooter-section .shipping {
-		color: #222;
+	.info-line {
+		display: none;
 	}
 
-	.prefooter-section .info-line {
-		width: 2px;
-		height: 2px;
-		/* background-color: #999; */
-		background-color: red;
-		margin-top: 36px;
-		margin-left: auto;
-		margin-right: auto;
-		transform: rotateX(90deg);
+	.info-v-line {
+		height: 230px;
+		width: 4px;
+		background-color: #999;
+		margin-top: auto;
+		margin-bottom: auto;
 	}
 
 	.info-box:last-child {
-		margin-bottom: 50px;
+		margin-bottom: 0;
 	}
 
-	.footer {
-		background-color: #00101d;
-		color: #d9dee2;
-		text-align: center;
-		letter-spacing: 1px;
+	.footer-contain {
+		display: flex;
+		flex-direction: row;
 	}
+
+.footer-newsletter-box{
+	width: 320px;
+}
 
 	.footer-newsletter {
 		text-transform: uppercase;
 		font-size: 14px;
 		padding: 30px 0;
+		line-height: 24px;
 	}
 
 	.subscribe-btn {
@@ -1850,7 +1846,7 @@ main {
 		width: 100%;
 		text-align: center;
 		padding: 8px 18px;
-		font-size: 12px;
+		font-size: 10px;
 	}
 
 	.subscribe-btn::before {
@@ -1861,14 +1857,16 @@ main {
 	.footer-menu {
 		display: flex;
 		flex-wrap: wrap;
+		width: 100%;
+		margin-left: 90px;
 	}
-
+	
 	.footer-menu-box {
+		justify-content: center;
 		display: flex;
 		flex-direction: column;
 		list-style: none;
-		margin: 0 10px 30px 10px;
-		flex-grow: 1;
+		margin: 10px 0px;
 	}
 
 	.footer-menu-box-title {
