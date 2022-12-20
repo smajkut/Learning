@@ -124,7 +124,9 @@ main {
 	filter: drop-shadow(0 0 2px #111);
 }
 
-.burger-menu div {
+.bar-1,
+.bar-2,
+.bar-3 {
 	background-color: var(--body-color-dark);
 	content: '';
 	display: block;
@@ -463,6 +465,7 @@ main {
 	background-size: contain;
 	width: 100%;
 	height: 100%;
+	transition: transform 0.3s;
 }
 
 .pattern-big-img-box {
@@ -478,7 +481,7 @@ main {
 	height: 300px;
 	background-image: url('./img/pattern-big-fungi-forest.webp');
 	filter: saturate(1.2);
-	transition: transform 0.3s;
+	transition: transform 0.6s;
 }
 
 .pattern-big-img:hover {
@@ -1498,7 +1501,9 @@ main {
 		width: 38px;
 	}
 
-	.burger-menu div {
+	.bar-1,
+	.bar-2,
+	.bar-3 {
 		height: 4px;
 		margin-bottom: 6px;
 	}
@@ -1723,7 +1728,7 @@ main {
 	.discover-img {
 		object-fit: cover;
 		object-position: center;
-		margin: 10px 0;
+		margin: 20px 0;
 	}
 
 	.fabrics-section {
@@ -1825,9 +1830,9 @@ main {
 		flex-direction: row;
 	}
 
-.footer-newsletter-box{
-	width: 320px;
-}
+	.footer-newsletter-box {
+		width: 320px;
+	}
 
 	.footer-newsletter {
 		text-transform: uppercase;
@@ -1860,7 +1865,7 @@ main {
 		width: 100%;
 		margin-left: 90px;
 	}
-	
+
 	.footer-menu-box {
 		justify-content: center;
 		display: flex;
@@ -1882,6 +1887,359 @@ main {
 		padding: 8px 4px;
 		font-size: 14px;
 		/* line-height: 1.5; */
+	}
+
+	.footer .line {
+		width: 90%;
+		height: 1.2px;
+		background-color: #d9dee2;
+		margin: 32px auto 22px;
+	}
+
+	.authors {
+		font-size: 12px;
+		letter-spacing: 2px;
+	}
+
+	.authors a {
+		color: #d9dee2;
+	}
+
+	.footer-social-box a,
+	.footer-payment-box a {
+		color: #d9dee2;
+		margin: 0 10px;
+	}
+
+	.footer-social-box {
+		font-size: 30px;
+		margin-bottom: 12px;
+	}
+
+	.footer-payment-box {
+		font-size: 40px;
+		padding-bottom: 22px;
+	}
+
+	.footer a {
+		transition: color 0.2s;
+	}
+	.footer a:hover {
+		color: rgb(218, 165, 32);
+	}
+}
+
+@media (min-width: 1200px) {
+	.wallpaper-section-heading-imgs {
+		height: 440px;
+		width: 440px;
+	}
+
+	.collection-headings {
+		width: 440px;
+		padding-left: 0;
+	}
+
+	.collection-heading-item {
+		width: 440px;
+		font-size: 14px;
+		margin-top: 20px;
+	}
+
+	.collection-titles {
+		width: 440px;
+	}
+
+	.collection-title-item {
+		min-width: 440px;
+		padding: 14px 0 14px 0;
+		font-size: 30px;
+	}
+
+	.collection-texts {
+		width: 440px;
+		height: 230px;
+		/* padding-left: 0; */
+	}
+
+	.collection-text-item {
+		min-width: 440px;
+		font-size: 14px;
+		padding: 0 10px 30px 0;
+	}
+
+	.collection-gallery {
+		margin-left: 0px;
+		width: 800px;
+		zoom: 0.8;
+	}
+
+	.collection-gallery-item {
+		margin: 0;
+		min-width: 800px;
+	}
+
+	.collection-btn {
+		font-size: 18px;
+		margin-bottom: 60px;
+	}
+
+	.collection-btn-box {
+		margin-left: 0;
+	}
+
+	.collection-carousel-btns {
+		margin-bottom: 30px;
+	}
+
+	.pattern-section {
+		margin-top: 0px;
+	}
+
+	.pattern-section-title {
+		font-size: 48px;
+		padding: 80px 0;
+	}
+
+	.pattern-title {
+		font-size: 16px;
+	}
+
+	.pattern-gallery-heading {
+		font-size: 38px;
+	}
+
+	.interior-section {
+		flex-direction: row;
+	}
+
+	.interior-section-left {
+		width: 60%;
+		margin-bottom: 30px;
+	}
+	.interior-section-right {
+		align-self: center;
+		width: 40%;
+		padding-left: 50px;
+	}
+
+	.interior-paralax-img-box {
+		height: 760px;
+	}
+
+	.interior-img-big {
+		height: 100%;
+		width: 80%;
+	}
+	.interior-img-small {
+		top: 680px;
+		width: 40%;
+		right: 12px;
+		box-shadow: 0 0 10px rgb(0, 0, 0);
+	}
+
+	.interior-create {
+		margin-top: 32px;
+		text-align: center;
+	}
+
+	.interior-create h5 {
+		font-size: 16px;
+		margin-bottom: 28px;
+	}
+
+	.interior-create h3 {
+		font-size: 36px;
+		margin-bottom: 24px;
+	}
+
+	.interior-create p {
+		font-size: 16px;
+		letter-spacing: 4px;
+		margin-bottom: 50px;
+	}
+
+	.interior-create-btn {
+		width: 220px;
+		margin: 0 auto;
+		font-size: 18px;
+	}
+
+	.discover-content-left {
+		padding-left: 70px;
+	}
+
+	.discover-text p {
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	.discover-img {
+		height: 650px;
+		margin: 20px 0;
+	}
+
+	.fabrics-section {
+		margin-top: 30px;
+	}
+
+	.fabrics-title {
+		font-size: 16px;
+	}
+
+	.fabrics-btns i {
+		font-size: 30px;
+	}
+
+	.fabrics-gallery-heading {
+		font-size: 38px;
+	}
+
+	.fabrics-gallery-img-box {
+		display: flex;
+		margin-bottom: 34px;
+		overflow-x: scroll;
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+	}
+
+	.fabrics-gallery-item {
+		width: 280px;
+		min-height: 280px;
+		margin-right: 20px;
+	}
+
+	.fabrics-gallery-img-container {
+		width: 280px;
+		height: 340px;
+	}
+
+	.fabrics-gallery-item img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.fabrics-gallery-item p {
+		margin: 14px 8px;
+		letter-spacing: 2px;
+		font-size: 16px;
+	}
+
+	.fabrics-btn {
+		width: 200px;
+		margin-bottom: 30px;
+	}
+
+	.info-rowgroup {
+		display: flex;
+		flex-direction: row;
+		padding: 40px 0;
+	}
+
+	.info-box {
+		padding: 0 25px;
+		margin-bottom: 44px;
+	}
+
+	.prefooter-section i {
+		font-size: 26px;
+		margin: 44px 0;
+	}
+
+	.prefooter-section .info-title {
+		font-size: 24px;
+		margin-bottom: 38px;
+	}
+
+	.prefooter-section .info-text,
+	.prefooter-section .shipping {
+		font-size: 12px;
+		letter-spacing: 2px;
+		line-height: 22px;
+	}
+
+	.info-line {
+		display: none;
+	}
+
+	.info-v-line {
+		height: 280px;
+		width: 4px;
+		background-color: #999;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.info-box:last-child {
+		margin-bottom: 0;
+	}
+
+	.footer-contain {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.footer-newsletter-box {
+		width: 320px;
+	}
+
+	.footer-newsletter {
+		text-transform: uppercase;
+		font-size: 14px;
+		padding: 30px 0;
+		line-height: 24px;
+	}
+
+	.subscribe-btn {
+		background-color: #d9dee2;
+		color: #00101d;
+		margin-bottom: 30px;
+	}
+
+	.subscribe-input {
+		width: 100%;
+		text-align: center;
+		padding: 8px 18px;
+		font-size: 12px;
+	}
+
+	.subscribe-btn::before {
+		background-color: #00101d;
+		opacity: 1;
+	}
+
+	.footer-contain {
+		padding: 38px 0;
+	}
+
+	.footer-menu {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		margin-left: 90px;
+	}
+
+	.footer-menu-box {
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		margin: 10px 0px;
+	}
+
+	.footer-menu-box-title {
+		text-transform: uppercase;
+		margin-bottom: 8px;
+		font-size: 16px;
+		color: #999;
+	}
+
+	.footer-menu-item {
+		color: #d9dee2;
+		text-decoration: none;
+		padding: 12px 4px;
+		font-size: 14px;
+		line-height: 1.5;
 	}
 
 	.footer .line {

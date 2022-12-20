@@ -5,6 +5,9 @@ const bar3 = document.querySelector('.bar-3')
 const navHeader = document.querySelector('.nav-header')
 const mainNav = document.querySelector('.navigation')
 const sidebar = document.querySelector('.sidebar')
+const sideIcons = document.querySelector('.side-icons')
+
+const mainContent = document.querySelector('main')
 
 const collectionHeadingImgBox = document.querySelector('.wallpaper-section-heading-imgs-box')
 const collectionHeadingImages = document.querySelectorAll('.wallpaper-section-heading-img')
@@ -38,7 +41,7 @@ const fabricsGalleryImages = document.querySelectorAll('.fabrics-gallery-img-box
 const fabricsBtnLeft = document.querySelector('.fabrics-arrow-left')
 const fabricsBtnRight = document.querySelector('.fabrics-arrow-right')
 
-const interiorParalaxSmall = document.querySelector('.interior-img-small') 
+const interiorParalaxSmall = document.querySelector('.interior-img-small')
 
 let indexCollectionHeadingImgCarousel = 0
 let indexCollectionHeadingCarousel = 0
@@ -47,10 +50,51 @@ let indexCollectionTextCarousel = 0
 let indexCollectionGalleryCarousel = 0
 
 let valueY
+let widthOfView
 
 const valueYRefresh = () => {
 	valueY = window.scrollY
-	
+}
+
+const widthOfViewport = () => {
+	widthOfView = window.innerWidth
+}
+
+const miniNav = () => {
+	if (widthOfView > 992 && window.scrollY > 40) {
+		mainNav.style.height = '42px';
+		mainContent.style.marginTop = '42px';
+		navHeader.style.fontSize = '30px';
+		navHeader.innerHTML = 'GW';
+		burgerMenu.style.width = '24px';
+		bar1.style.height = '2px';
+		bar2.style.height = '2px';
+		bar3.style.height = '2px';
+		bar1.style.marginBottom = '1px';
+		bar2.style.marginBottom = '1px';
+		bar3.style.marginBottom = '1px';
+		sideIcons.style.fontSize = '18px';
+	} else {
+		mainNav.style.height = '90px';
+		mainContent.style.marginTop = '90px';
+		navHeader.style.fontSize = '40px';
+		navHeader.innerHTML = 'Garden<br>Whispers';
+		burgerMenu.style.width = '38px';
+		bar1.style.height = '4px';
+		bar2.style.height = '4px';
+		bar3.style.height = '4px';
+		bar1.style.marginBottom = '6px';
+		bar2.style.marginBottom = '6px';
+		bar3.style.marginBottom = '6px';
+		sideIcons.style.fontSize = '24px';
+		
+	}
+}
+
+const refreshValuesBox = () => {
+	interiorParalax()
+	widthOfViewport()
+	miniNav()
 }
 
 const burgerMenuActive = () => {
@@ -68,7 +112,6 @@ const navEfects = () => {
 		navHeader.style.color = '#222'
 		navHeader.style.filter = ''
 	}
-
 
 	if (window.scrollY > 30) {
 		mainNav.style.boxShadow = '0 0 20px 1px #093a2f'
@@ -132,9 +175,7 @@ const changeCollectionText = () => {
 	} else if (indexCollectionTextCarousel < 0) {
 		indexCollectionTextCarousel = collectionTexts.length - 1
 	}
-	collectionTextBox.style.transform = `translateX(${
-		-indexCollectionTextCarousel * collectionSigleText.offsetWidth
-	}px)`
+	collectionTextBox.style.transform = `translateX(${-indexCollectionTextCarousel * collectionSigleText.offsetWidth}px)`
 }
 
 const changeCollectionGallery = () => {
@@ -205,7 +246,7 @@ const patternBtnDisabled = () => {
 		patternBtnLeft.style.opacity = '1'
 	}
 
-	if(patternGalleryScroll > ((patternGalleryImages.length - 2) * 320)){
+	if (patternGalleryScroll > (patternGalleryImages.length - 2) * 320) {
 		patternBtnRight.style.opacity = '0.5'
 	} else {
 		patternBtnRight.style.opacity = '1'
@@ -227,7 +268,7 @@ const fabricsBtnDisabled = () => {
 		fabricsBtnLeft.style.opacity = '1'
 	}
 
-	if(fabricsGalleryScroll > ((fabricsGalleryImages.length - 2) * 320)){
+	if (fabricsGalleryScroll > (fabricsGalleryImages.length - 2) * 320) {
 		fabricsBtnRight.style.opacity = '0.5'
 	} else {
 		fabricsBtnRight.style.opacity = '1'
@@ -241,12 +282,8 @@ const handleFabricsGalleryLeft = () => {
 }
 
 const interiorParalax = () => {
-	let paralaxTranslateYInterior = -250 + (valueY * 4)/100 + '%'
-	interiorParalaxSmall.style.transform = `translateY(${paralaxTranslateYInterior})`;
-}
-
-const paralaxBox = () => {
-	interiorParalax()
+	let paralaxTranslateYInterior = -250 + (valueY * 4) / 100 + '%'
+	interiorParalaxSmall.style.transform = `translateY(${paralaxTranslateYInterior})`
 }
 
 //addEventListener
@@ -261,7 +298,7 @@ burgerMenu.addEventListener('click', burgerMenuActive)
 window.addEventListener('scroll', navEfects)
 
 patternGalleryBox.addEventListener('scroll', () => {
-	patternGalleryScroll = patternGalleryBox.scrollLeft;
+	patternGalleryScroll = patternGalleryBox.scrollLeft
 	patternBtnDisabled()
 })
 patternBtnDisabled()
@@ -269,11 +306,11 @@ patternBtnRight.addEventListener('click', handlePatternGalleryRight)
 patternBtnLeft.addEventListener('click', handlePatternGalleryLeft)
 
 fabricsGalleryBox.addEventListener('scroll', () => {
-	fabricsGalleryScroll = fabricsGalleryBox.scrollLeft;
+	fabricsGalleryScroll = fabricsGalleryBox.scrollLeft
 	fabricsBtnDisabled()
 })
 fabricsBtnDisabled()
 fabricsBtnRight.addEventListener('click', handleFabricsGalleryRight)
 fabricsBtnLeft.addEventListener('click', handleFabricsGalleryLeft)
 
-window.addEventListener('scroll', paralaxBox)
+window.addEventListener('scroll', refreshValuesBox)
