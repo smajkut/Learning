@@ -190,7 +190,6 @@ Hints:
 // 	</div>
 // )
 
-
 // ReactDOM.render(navbar, document.getElementById('root'))
 // const root = ReactDOM.createRoot(document.getElementById('root'))
 // root.render(reactFacts)
@@ -208,25 +207,63 @@ It should return an ordered list with the reasons why you're
 excited to be learning React :)
 
 Render your list to the page
-
  */
+
+/*
+Part 2: 
+- Add a `header` element with a nested `nav` element. Inside the `nav`,
+  include a `img` element with the image of the React logo inside
+  (src="./react-logo.png") and make sure to set the width to something
+  more manageable so it doesn't take up the whole screen
+- Add an `h1` with some text describing the page. (E.g. "Reasons
+  I'm excited to learn React"). Place it above the ordered list.
+- Add a `footer` after the list that says: 
+    "© 20xx <last name here> development. All rights reserved."
+ */
+
+/*
+Mini Challenge:
+Move the `header` element from Page into 
+its own component called "Header"
+*/
+
+/**
+Challenge: 
+
+- Move the `footer` into its own component called "Footer" 
+  and render that component inside the Page component.
+- Move the `h1` and `ol` together into another component
+  called "MainContent" and render inside Page as well.
+*/
+
+/**
+Challenge: 
+
+- Add an `ul` inside the Header's `nav` and create
+  the following `li`s: "Pricing", "About", & "Contact"
+- Using flexbox, line up the nav items horizontally, and
+  put them inline with the React logo.
+- Change the image styling to happen in CSS instead of in-line
+  For practice, add a new class to the image in order to style it
+*/
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+import Header from './Header'
+import MainContent from './MainContent'
+import Footer from './Footer'
 
-function Challenge() {
-	return(
-		<div>
-			<ol>
-				<li>Nowości</li>
-				<li>Nauka</li>
-				<li>Dolary</li>
-				<li>Niezależność</li>
-			</ol>
+
+function Page() {
+	return (
+		<div className='page'>
+			<Header />
+			<MainContent />
+			<Footer />
 		</div>
 	)
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<Challenge />)
+root.render(<Page />)
