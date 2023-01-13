@@ -9,7 +9,7 @@ export default function Card(props) {
 				<img src='../images/star.png' className='card--star' />
 				<span>{props.rating}</span>
 				<span className='gray'> {props.reviewCount} • </span>
-				<span className='gray'>{props.country}</span>
+				<span className='gray'>{props.location}</span>
 			</div>
 			<p>{props.title}</p>
 			<p>
@@ -19,14 +19,3 @@ export default function Card(props) {
 	)
 }
 
-/*
-Challenge: Pass props to the Card component and display that data
-
-- img ("katie-zaferes.png")
-- rating ("5.0")
-- reviewCount (6)
-- country (Whatever you want)
-- title ("Life Lessons with Katie Zaferes")
-- price (136)
-
-*/
