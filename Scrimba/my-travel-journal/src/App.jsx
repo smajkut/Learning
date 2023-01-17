@@ -1,7 +1,12 @@
 import React from 'react'
+import Nav from './Nav'
+import Card from './Card'
 
 export default function App() {
   return(
-    <h1>Test</h1>
+    <div className='app-container'>
+      <Nav />
+      <Card />
+    </div>
   )
 }

@@ -1,0 +1,38 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #e5e5e5;
+	font-family: 'Inter', sans-serif;
+	height: 100vh;
+}
+
+.app-container {
+	width: 550px;
+	height: 704px;
+	background-color: #fff;
+}
+
+.nav-bar {
+	display: flex;
+	color: #fff;
+	background-color: #f55a5a;
+	align-items: center;
+	justify-content: center;
+	height: 55px;
+	font-weight: 500;
+	font-size: 14.4608px;
+	line-height: 18px;
+	letter-spacing: -0.075em;
+}
+
+.nav-bar > img {
+    height: 30px;
+    margin-right: 14px;
+}
