@@ -1,5 +1,5 @@
 import React from 'react'
-import NavIcon from '../public/img/icon.svg'
+import NavIcon from '/img/icon.svg'
 
 export default function Nav() {
     return (

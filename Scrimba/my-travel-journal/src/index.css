@@ -10,12 +10,11 @@ body {
 	align-items: center;
 	background-color: #e5e5e5;
 	font-family: 'Inter', sans-serif;
-	height: 100vh;
+	height: 100%
 }
 
 .app-container {
 	width: 550px;
-	height: 704px;
 	background-color: #fff;
 }
 
@@ -33,6 +32,86 @@ body {
 }
 
 .nav-bar > img {
-    height: 30px;
-    margin-right: 14px;
+	height: 30px;
+	margin-right: 14px;
+}
+
+.card-box {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.card-single {
+	display: flex;
+	width: 471px;
+	height: 168px;
+	margin: 20px 0px;
+}
+
+.card-image {
+	width: 125px;
+	height: 168px;
+	border-radius: 5px;
+	object-position: center;
+	object-fit: cover;
+}
+
+.card-info {
+	margin-left: 12px;
+}
+
+.card-location {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.card-location > img {
+	width: 7px;
+	height: 9.55px;
+	margin-right: 4px;
+}
+
+.card-location > h3 {
+	font-weight: 400;
+	font-size: 10.24px;
+	line-height: 12px;
+	letter-spacing: 0.17em;
+	text-transform: uppercase;
+	margin-right: 8px;
+}
+
+.card-location > a {
+	font-weight: 400;
+	font-size: 10.24px;
+	line-height: 12px;
+	text-decoration-line: underline;
+	color: #918e9b;
+}
+
+.card-title {
+	font-weight: 700;
+	font-size: 25px;
+	line-height: 30px;
+	color: #2b283a;
+	margin-top: 10px;
+}
+
+.card-date {
+	font-weight: 700;
+	font-size: 10.24px;
+	line-height: 12px;
+	color: #2b283a;
+	margin-top: 10px;
+}
+
+.card-text{
+	font-weight: 400;
+	font-size: 10.24px;
+	line-height: 15px;
+	color: #2B283A;
+	margin-top: 10px;
 }
